@@ -1,47 +1,31 @@
-import { projects } from "@/constants/projects";
-import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 
-export default function ProjectDetailScreen() {
-  const { id } = useLocalSearchParams();
-  const project = projects.find((p) => p.id === id);
-
-  if (!project) {
-    return (
-      <View style={styles.container}>
-        <Text>Proyecto no encontrado.</Text>
-      </View>
-    );
-  }
-
+export default function TabsLayout() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{project.title}</Text>
-      <Text style={styles.tech}>{project.tech}</Text>
-      <Text style={styles.description}>{project.description}</Text>
-    </View>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Inicio",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="projects"
+        options={{
+          title: "Proyectos",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="briefcase" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-  },
-  title: {
-    fontSize: 26,
-    fontWeight: "bold",
-    marginBottom: 8,
-  },
-  tech: {
-    fontSize: 14,
-    color: "#777",
-    fontStyle: "italic",
-    marginBottom: 16,
-  },
-  description: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: "#333",
-  },
-});
