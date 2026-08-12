@@ -1,50 +1,51 @@
-# Welcome to your Expo app 👋
+# Portafolio Profesional Interactivo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación móvil desarrollada con **React Native** y **Expo** como parte del Proyecto Programado 1 del curso Programación para Dispositivos Móviles (TEC).
 
-## Get started
+## 📱 Descripción
 
-1. Install dependencies
+Portafolio profesional interactivo que simula el manejo de datos locales mediante el estado de la aplicación, sin conexión a bases de datos externas.
 
-   ```bash
-   npm install
-   ```
+## ✨ Funcionalidades
 
-2. Start the app
+- **Pantalla de Inicio**: perfil con foto, título profesional y biografía.
+- **Pantalla de Proyectos**: lista desplazable (`FlatList`) con tarjetas de proyectos, incluyendo buscador en tiempo real (`useState`).
+- **Pantalla de Detalles**: vista individual de cada proyecto, accesible al tocar una tarjeta, con navegación de ida y vuelta (Stack + rutas dinámicas).
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tecnologías
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo / Expo Router (navegación por Tabs + Stack)
+- TypeScript
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## 📂 Estructura del proyecto
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+  (tabs)/          → Pantallas de Inicio y Proyectos (navegación por tabs)
+  project/
+    [id].tsx        → Pantalla de Detalles (ruta dinámica)
+constants/
+  projects.ts        → Datos simulados de los proyectos
+assets/images/        → Recursos visuales (foto de perfil, etc.)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+## 🚀 Cómo correr el proyecto
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Instalar dependencias:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. Iniciar el servidor de desarrollo:
+```bash
+npm run android
+```
 
-## Join the community
+## 👤 Autor
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Danny Roman**
+Estudiante de Programación para Dispositivos Móviles — TEC, Costa Rica
